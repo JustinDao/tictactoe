@@ -17,6 +17,8 @@ def tictactoe
         if valid_board?(board) && valid_three_in_a_row?(board)
           # Add to valid games
           valid_games.push(board)
+          print_board(board)
+          puts
         end
       end
     end
@@ -25,6 +27,9 @@ def tictactoe
   puts "Number of possbile endings: #{valid_games.count}"
 end
 
+# This method needs to be updated
+# Currently states that a board where x_count == o_count
+# and X wins is valid. But this can't occur unless O goes first
 def valid_board?(board, x_first_only=true)
 
   # Get counts for each type of move
